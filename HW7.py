@@ -1,0 +1,22 @@
+#%%
+import pandas as pd
+import matplotlib.pyplot as plt
+survey = pd.read_csv('class_survey_v2_clean.csv')
+f=survey['pet'].value_counts()
+avg=(survey.groupby('pet')
+    ['hours_sleep'].mean().round(1).sort_values(ascending=False)
+)
+print(f)
+print(avg)
+g=survey['grade'].value_counts()
+print(g)
+avg2=(survey.groupby('grade')
+    ['minutes_reading'].mean().round(1).sort_values(ascending=True)
+)
+print(avg2)
+plt.bar(avg.index, avg.values, color='#2A9D8F')
+plt.title('Average amount of sleep per pet owned')
+plt.xlabel('Pet')
+plt.ylabel('Amount of Sleep')
+plt.savefig('sleep_by_pet.png')
+print("Bird Owners, on average, slept the most. I would not tell anybody that having a certain type of pet helps you sleep more, because having a bird, for example, won't make you get more sleep, than if you had a dog. Another thing to note is that most of the differences were 0.2 or 0.1.")

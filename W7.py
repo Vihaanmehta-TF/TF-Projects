@@ -1,4 +1,3 @@
-#%%
 import pandas as pd
 import matplotlib.pyplot as plt
 survey = pd.read_csv('class_survey_v2_clean.csv')
@@ -22,4 +21,3 @@ plt.title('Average Minutes Reading by Favorite Subject')
 plt.xlabel('Favorite Subject')
 plt.ylabel('Average Minutes Reading')
 plt.savefig('reading_by_subject.png')
-# %%
